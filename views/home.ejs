@@ -1,0 +1,27 @@
+<%-include("partials/header.ejs")-%>
+    <h1><%=header%></h1>
+    <p><%= homeStartingContent%></p>
+
+    <h1>Your Blogs</h1>
+    <br>
+    <br>
+
+    <%if(posts.length==0){%>
+
+     <h1>You have no blogs...:)</h1>
+
+    <%}%>
+    
+     <% posts.forEach((post)=>{%>
+          <form action="/delete" method="post">
+               <h3>  <%= post.title %> </h3>
+          <p><%=post.content %></p>
+          <br>
+          <br>
+          <div style="text-align: right;"><h5 style="font-weight: 600;" >CHECK it if you want to delete this post</h5><input type="checkbox" style="height: 20px;" name="checkbox" value="<%=post.title%>" onchange="this.form.submit()" ></div>
+          </form>
+     
+     
+     
+     <%})%>
+

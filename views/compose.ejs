@@ -1,0 +1,18 @@
+<%-include("partials/header.ejs")-%>
+<br>
+<h1><%=header%></h1>
+<form  action="/compose" method="POST">
+
+    <label for="">HEADER</label>
+    <input class="form-control" type="text" name="header" style="width: 1200px;" placeholder="Header" >
+    <br>
+    <br>
+    <label for="">CONTENT</label>
+    <textarea class="form-control" name="content" id="" cols="30" rows="10"></textarea>
+    <br>
+
+    <button class="btn btn-warning" type="submit">PUBLISH</button>
+
+</form>
+
+<%-include("partials/footer.ejs")-%>
